@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "8156489e-4cc8-471f-b5e3-4cb408a84be8",
+		"name": "Cloudgov",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17953118",
+		"_collection_link": "https://crimson-trinity-429126.postman.co/workspace/My-Workspace~81f6d802-35ca-4242-846d-ed871d527d76/collection/17953118-8156489e-4cc8-471f-b5e3-4cb408a84be8?action=share&source=collection_link&creator=17953118"
+	},
+	"item": [
+		{
+			"name": "pizzas",
+			"item": [
+				{
+					"name": "get all pizzas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/pizzas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"pizzas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add pizza",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"The Corn Pizza\",\n    \"description\": \"Best for a corn lover\",\n    \"toppings\": [],\n    \"sizes\": [\"SMALL\", \"MEDIUM\"],\n    \"price\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/pizzas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"pizzas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get pizza by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/pizzas/67e7dbf28caee613d84bbd22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"pizzas",
+								"67e7dbf28caee613d84bbd22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update pizza by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Paneer Cheese Pizza\",\n    \"description\": \"Best for a veg/non-veg lover\",\n    \"toppings\": [\"Paneer\", \"Capsicum\"],\n    \"sizes\": [{ \"size\": \"SMALL\", \"price\": 79 }, { \"size\": \"MEDIUM\", \"price\": 149 }]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/pizzas/67e7dc218caee613d84bbd27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"pizzas",
+								"67e7dc218caee613d84bbd27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete pizza by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/pizzas/67e7e1682cdc52dc5c56f01c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"pizzas",
+								"67e7e1682cdc52dc5c56f01c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "add order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pizzas\": [\n        { \"pizza\": \"67e7e1682cdc52dc5c56f01c\", \"qty\": 1 },\n        { \"pizza\": \"67e7e1782cdc52dc5c56f020\", \"qty\": 1 }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update order by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders/67e8041293d3bca8115b9feb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"67e8041293d3bca8115b9feb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
